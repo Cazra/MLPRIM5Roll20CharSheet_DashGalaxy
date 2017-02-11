@@ -1,0 +1,34 @@
+include fields.pug
+include tabs.pug
+
++input('text', 'debug')(value=' ', style='display: none;')
+
+.top
+  .topStats(style='margin-bottom: 1em;')
+    div
+      +labelledUnderlined('Character Name')(style='width: 2.5in;'): +input('text', 'character_name')
+      +labelledUnderlined('Player Name'): +input('text', 'player_name')
+    div
+      +labelledUnderlined('Race')(style='width: 1.5in;'): +input('text', 'race')
+      +labelledUnderlined('Classes and levels')(style='width: 2in;'): +input('text', 'classes')
+    div
+      +labelledUnderlined('Active Status Conditions')(style='width: 3in;'): +input('text', 'activeConditions')
+
+.tabsContainer
+  +tab('Core', 'mainTabs', true)
+    include core/index.pug
+  +tab('Skills', 'mainTabs')
+    include skills/index.pug
+  +tab('Perks', 'mainTabs')
+    include perks/index.pug
+  +tab('Powers/Abilities', 'mainTabs')
+    include powers/index.pug
+  +tab('Gear/Equipment', 'mainTabs')
+    include gear/index.pug
+  +tab('Notes', 'mainTabs')
+    include notes/index.pug
+
+script(type='text/worker')
+  include ../js/worker.js
+
+include rolltemplate.pug
