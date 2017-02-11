@@ -1,11 +1,9 @@
-# Pathfinder (Cazra)
+# MLP: Roleplaying is Magic 5 (Space Ranger Dash Galaxy theme)
 
-This Pathfinder character sheet is designed to provide a much simpler but
-still very versatile alternative to the official Roll20 Pathfinder sheet.
+This Roll20 character sheet is a for the homebrew MLP roleplaying system,
+MLP: Roleplaying is Magic 5th edition. Primarily I have it up here for version
+control and to provide URLs for the custom graphics used in the sheet.
 
-The sheet features tabs, auto-calculated fields, rollable stats with
-notes, and more. The focus of this sheet is to have an intuitive, easily
-navigable interface while still being flexible enough to handle as much or as
-little detail as you like about your character.
-
-Please enjoy!
+For anyone who would like to know more about or try out this system, here
+is where I'm currently keeping the digital books for it I've been working on:
+https://drive.google.com/drive/folders/0B93PkdsCfAslVktEeW5HYUVHdlE?usp=sharing
