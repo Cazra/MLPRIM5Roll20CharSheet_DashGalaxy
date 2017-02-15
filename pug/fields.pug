@@ -1,3 +1,8 @@
+mixin checkbox(name, label, value, checked)
+  .checkbox
+    input(type='checkbox', name='attr_' + name, title=attributes.title, style=attributes.style, value=attributes.value, checked=checked)
+    span= label
+
 mixin fieldBox(type, name, label)
   .fieldBox(style=attributes.style)
     if(label)
@@ -11,7 +16,7 @@ mixin fraction(name)
     input(type='number', name='attr_' + name + '_max')
 
 mixin input(type, name)
-  input(type=type, name='attr_' + name, placeholder=attributes.placeholder, style=attributes.style, value=attributes.value)
+  input(type=type, name='attr_' + name, placeholder=attributes.placeholder, style=attributes.style, value=attributes.value, disabled=attributes.disabled)
 
 mixin labelledAbove(label)
   .labelledAbove(style=attributes.style)

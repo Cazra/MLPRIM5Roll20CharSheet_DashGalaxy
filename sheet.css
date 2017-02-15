@@ -1,26 +1,29 @@
-.sheet-rolltemplate-pf table {
+.sheet-rolltemplate-mlprim5 table {
   background: #000;
-  border: solid 2px #00f;
+  border: solid 2px #0ff;
   border-collapse: separate;
   border-radius: 1em;
-  color: #00f;
+  color: #0ff;
   overflow: hidden;
   width: 100%;
 }
-.sheet-rolltemplate-pf table thead th {
-  background: #008;
-  color: #00f;
+.sheet-rolltemplate-mlprim5 table thead th {
+  background: #088;
+  color: #0ff;
   padding: 0.5em 1em;
 }
-.sheet-rolltemplate-pf table tbody {
+.sheet-rolltemplate-mlprim5 table tbody {
   text-align: center;
 }
-.sheet-rolltemplate-pf table tbody td {
+.sheet-rolltemplate-mlprim5 table tbody td {
   padding: 0.5em 0;
 }
-.sheet-rolltemplate-pf table tbody .sheet-notes {
+.sheet-rolltemplate-mlprim5 table tbody .sheet-notes {
   font-size: 0.8em;
   font-style: italic;
+}
+.sheet-rolltemplate-mlprim5 .inlinerollresult {
+  background: #000;
 }
 .charsheet {
   background: #000;
@@ -28,6 +31,44 @@
   height: 100%;
   min-height: 9in;
   width: 9in;
+}
+.charsheet .sheet-corePanel .sheet-primaryAttribute {
+  display: inline-block;
+}
+.charsheet .sheet-corePanel .sheet-primaryAttribute .sheet-equation {
+  display: inline-block;
+  margin-left: -20px;
+  margin-top: 32px;
+  position: relative;
+  vertical-align: top;
+}
+.charsheet .sheet-corePanel .sheet-primaryAttribute .sheet-total {
+  display: inline-block;
+}
+.charsheet .sheet-corePanel .sheet-primaryAttribute .sheet-total input {
+  font-size: 2em;
+  left: 37px;
+  text-align: center;
+  top: 31px;
+  width: 32px;
+}
+.charsheet .sheet-corePanel .sheet-secondaryAttribute {
+  display: inline-block;
+}
+.charsheet .sheet-corePanel .sheet-secondaryAttribute .sheet-equation {
+  display: inline-block;
+  margin-left: -20px;
+  margin-top: 32px;
+  position: relative;
+  vertical-align: top;
+}
+.charsheet .sheet-corePanel .sheet-secondaryAttribute .sheet-total {
+  display: inline-block;
+}
+.charsheet .sheet-corePanel .sheet-secondaryAttribute .sheet-total input {
+  font-size: 1.5em;
+  text-align: center;
+  width: 32px;
 }
 .charsheet input {
   border: none;
@@ -54,6 +95,41 @@
   box-shadow: none;
   padding: 0;
   resize: none;
+}
+.charsheet .sheet-checkbox {
+  background: rgba(0, 255, 255, 0.1);
+  border: solid 1px #0ff;
+  border-radius: 3px;
+  display: inline-block;
+  height: 20px;
+  min-width: 20px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+}
+.charsheet .sheet-checkbox span {
+  color: #0ff;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.charsheet .sheet-checkbox input {
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.charsheet .sheet-checkbox input:checked + span {
+  background: #0ff;
+  color: #000;
+}
+.charsheet .sheet-graphicalField {
+  position: relative;
 }
 .charsheet .sheet-graphicalField input {
   background: transparent;

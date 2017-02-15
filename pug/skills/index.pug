@@ -1,1 +1,25 @@
-div TEST skills
+include ../fields.pug
+
+.skillsPanel
+  +repeating('skills')
+    +labelledUnderlined('Name')(style='width: 1.5in;'): +input('text', 'name')
+    +labelledUnderlined('Total'): +input('number', 'total')(value='0', disabled='true', style='width: 0.5in;')
+    .equation.inlineBlock
+      .mathOperator =
+      +labelledUnderlined('Attribute'): +select('attr')
+        +option('Mind', 'mind', true)
+        +option('Body', 'body')
+        +option('Heart', 'heart')
+      .mathOperator +
+      +checkbox('trained', 'T', '1')
+      +checkbox('improved', 'I', '1')
+      +checkbox('greater', 'G', '1')
+      .mathOperator +
+      +labelledUnderlined('Other'): +input('number', 'other')(style='width: 0.5in;')
+      .mathOperator +
+      +labelledUnderlined('Temporary'): +input('number', 'temp')(style='width: 0.6in;')
+
+
+    +labelledUnderlined('Notes'): +input('text', 'notes')
+    button(type='roll', value='&{template:mlprim5} {{charName=@{character_name}}} {{attr=@{name}}} {{result=[[@{equation}]]}} {{notes=@{notes}}}')
+    +input('hidden', 'equation')(value='2d6')

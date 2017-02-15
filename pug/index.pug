@@ -6,19 +6,13 @@ include tabs.pug
 .top
   .topStats(style='margin-bottom: 1em;')
     div
-      .inlineBlock(style='position: relative;')
+      .inlineBlock.graphicalField(style='position: relative;')
         img(src='https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/perkLevel.png')
-        .graphicalField: +input('number', 'perk_level')(style='left: 19px; top: 43px; font-size: 2em; font-family: sans-serif; width: 32px; text-align: center;')
-        .graphicalField: +input('text', 'character_name')(style='left: 80px; top: 47px; font-size: 1.5em; font-family: sans-serif; width: 240px')
+        +input('number', 'perk_level')(style='left: 19px; top: 43px; font-size: 2em; font-family: sans-serif; width: 32px; text-align: center;')
+        +input('text', 'character_name')(style='left: 80px; top: 47px; font-size: 1.5em; font-family: sans-serif; width: 240px')
       .inlineBlock(style='position: relative; vertical-align: top; width: 4in;')
-        +labelledUnderlined('Player Name')(style='position: absolute; top: 45px'): +input('text', 'player_name')
-    div(style='margin-top: -28px; margin-left: 64px;')
-      +labelledUnderlined('Race')(style='width: 1.5in;'): +input('text', 'race')
-      +labelledUnderlined('Job')(style='width: 2in;'): +input('text', 'classes')
-      +labelledUnderlined('Virtue')(style='width: 2in;'): +input('text', 'virtue')
-      +labelledUnderlined('Flaw')(style='width: 2in;'): +input('text', 'flaw')
-      +labelledUnderlined('Quirks')(style='width: 2in;'): +input('text', 'quirks')
-      +labelledUnderlined('Active Status Conditions')(style='width: 3in;'): +input('text', 'activeConditions')
+        +labelledUnderlined('Race')(style='width: 1.5in; position: absolute; top: 45px'): +input('text', 'race')
+        +labelledUnderlined('Job')(style='width: 2in; position: absolute; top: 45px; left: 1.6in;'): +input('text', 'classes')
 
 .tabsContainer
   +tab('Core', 'mainTabs', true)

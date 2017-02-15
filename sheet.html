@@ -3,58 +3,22 @@
 <div class="top">
   <div class="topStats" style="margin-bottom: 1em;">
     <div>
-      <div class="inlineBlock" style="position: relative;"><img src="https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/perkLevel.png"/>
-        <div class="graphicalField">
-          <input type="number" name="attr_perk_level" style="left: 19px; top: 43px; font-size: 2em; font-family: sans-serif; width: 32px; text-align: center;"/>
-        </div>
-        <div class="graphicalField">
-          <input type="text" name="attr_character_name" style="left: 80px; top: 47px; font-size: 1.5em; font-family: sans-serif; width: 240px;"/>
-        </div>
+      <div class="inlineBlock graphicalField" style="position: relative;"><img src="https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/perkLevel.png"/>
+        <input type="number" name="attr_perk_level" style="left: 19px; top: 43px; font-size: 2em; font-family: sans-serif; width: 32px; text-align: center;"/>
+        <input type="text" name="attr_character_name" style="left: 80px; top: 47px; font-size: 1.5em; font-family: sans-serif; width: 240px;"/>
       </div>
       <div class="inlineBlock" style="position: relative; vertical-align: top; width: 4in;">
-        <div class="labelledUnderlined" style="position: absolute; top: 45px;">
-          <label>Player Name</label>
+        <div class="labelledUnderlined" style="width: 1.5in; position: absolute; top: 45px;">
+          <label>Race</label>
           <div class="inner">
-            <input type="text" name="attr_player_name"/>
+            <input type="text" name="attr_race"/>
           </div>
         </div>
-      </div>
-    </div>
-    <div style="margin-top: -28px; margin-left: 64px;">
-      <div class="labelledUnderlined" style="width: 1.5in;">
-        <label>Race</label>
-        <div class="inner">
-          <input type="text" name="attr_race"/>
-        </div>
-      </div>
-      <div class="labelledUnderlined" style="width: 2in;">
-        <label>Job</label>
-        <div class="inner">
-          <input type="text" name="attr_classes"/>
-        </div>
-      </div>
-      <div class="labelledUnderlined" style="width: 2in;">
-        <label>Virtue</label>
-        <div class="inner">
-          <input type="text" name="attr_virtue"/>
-        </div>
-      </div>
-      <div class="labelledUnderlined" style="width: 2in;">
-        <label>Flaw</label>
-        <div class="inner">
-          <input type="text" name="attr_flaw"/>
-        </div>
-      </div>
-      <div class="labelledUnderlined" style="width: 2in;">
-        <label>Quirks</label>
-        <div class="inner">
-          <input type="text" name="attr_quirks"/>
-        </div>
-      </div>
-      <div class="labelledUnderlined" style="width: 3in;">
-        <label>Active Status Conditions</label>
-        <div class="inner">
-          <input type="text" name="attr_activeConditions"/>
+        <div class="labelledUnderlined" style="width: 2in; position: absolute; top: 45px; left: 1.6in;">
+          <label>Job</label>
+          <div class="inner">
+            <input type="text" name="attr_classes"/>
+          </div>
         </div>
       </div>
     </div>
@@ -65,14 +29,297 @@
     <input type="radio" id="tab_1" name="mainTabs" checked="checked"/>
     <label for="tab_1">Core</label>
     <div class="tabPanel">
-      <div>TEST core</div>
+      <div class="corePanel">
+        <div style="margin-left: 64px;">
+          <div class="labelledUnderlined" style="width: 2in;">
+            <label>Virtue</label>
+            <div class="inner">
+              <input type="text" name="attr_virtue"/>
+            </div>
+          </div>
+          <div class="labelledUnderlined" style="width: 2in;">
+            <label>Flaw</label>
+            <div class="inner">
+              <input type="text" name="attr_flaw"/>
+            </div>
+          </div>
+          <div class="labelledUnderlined" style="width: 2in;">
+            <label>Quirks</label>
+            <div class="inner">
+              <input type="text" name="attr_quirks"/>
+            </div>
+          </div>
+          <div class="labelledUnderlined" style="width: 3in;">
+            <label>Active Status Conditions</label>
+            <div class="inner">
+              <input type="text" name="attr_activeConditions"/>
+            </div>
+          </div>
+        </div>
+        <div class="inlineBlock" style="width: 50%;">
+          <div class="primaryAttribute">
+            <div class="total graphicalField"><img src="https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/mind.png"/>
+              <input type="number" name="attr_mindTotal" value="@{mindBase} + @{mindPerks} + @{mindOther} + @{mindTemp}" disabled="true"/>
+            </div>
+            <div class="equation">
+              <div class="mathOperator">=</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>Base</label>
+                <div class="inner">
+                  <input type="number" name="attr_mindBase" value="1"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>Perks</label>
+                <div class="inner">
+                  <input type="number" name="attr_mindPerks" value="0"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>Other</label>
+                <div class="inner">
+                  <input type="number" name="attr_mindOther" value="0"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.6in;">
+                <label>Temporary</label>
+                <div class="inner">
+                  <input type="number" name="attr_mindTemp" value="0"/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="primaryAttribute">
+            <div class="total graphicalField"><img src="https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/body.png"/>
+              <input type="number" name="attr_bodyTotal" value="@{bodyBase} + @{bodyPerks} + @{bodyOther} + @{bodyTemp}" disabled="true"/>
+            </div>
+            <div class="equation">
+              <div class="mathOperator">=</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>Base</label>
+                <div class="inner">
+                  <input type="number" name="attr_bodyBase" value="1"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>Perks</label>
+                <div class="inner">
+                  <input type="number" name="attr_bodyPerks" value="0"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>Other</label>
+                <div class="inner">
+                  <input type="number" name="attr_bodyOther" value="0"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.6in;">
+                <label>Temporary</label>
+                <div class="inner">
+                  <input type="number" name="attr_bodyTemp" value="0"/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="primaryAttribute">
+            <div class="total graphicalField"><img src="https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/heart.png"/>
+              <input type="number" name="attr_heartTotal" value="@{heartBase} + @{heartPerks} + @{heartOther} + @{heartTemp}" disabled="true"/>
+            </div>
+            <div class="equation">
+              <div class="mathOperator">=</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>Base</label>
+                <div class="inner">
+                  <input type="number" name="attr_heartBase" value="1"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>Perks</label>
+                <div class="inner">
+                  <input type="number" name="attr_heartPerks" value="0"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>Other</label>
+                <div class="inner">
+                  <input type="number" name="attr_heartOther" value="0"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.6in;">
+                <label>Temporary</label>
+                <div class="inner">
+                  <input type="number" name="attr_heartTemp" value="0"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="inlineBlock" style="width: 48%;">
+          <div class="secondaryAttribute" style="margin-bottom: 15px;">
+            <div class="total graphicalField"><img src="https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/armor.png"/>
+              <input type="number" name="attr_armor" style="left: 22px; top: 28px;" value="0"/>
+              <input type="number" name="attr_armor_max" style="left: 54px; top: 28px;" value="@{armorGear} + @{armorOther} + @{armorTemp}" disabled="true"/>
+            </div>
+            <div class="equation">
+              <div class="mathOperator">=</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>Gear</label>
+                <div class="inner">
+                  <input type="number" name="attr_armorGear" value="0"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>Other</label>
+                <div class="inner">
+                  <input type="number" name="attr_armorOther" value="0"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.6in;">
+                <label>Temporary</label>
+                <div class="inner">
+                  <input type="number" name="attr_armorTemp" value="0"/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="secondaryAttribute" style="margin-bottom: 16px;">
+            <div class="total graphicalField"><img src="https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/fortitude.png"/>
+              <input type="number" name="attr_fortitude" style="left: 22px; top: 26px;" value="0"/>
+              <input type="number" name="attr_fortitude_max" style="left: 54px; top: 26px;" value="@{fortitudeCalc} + @{fortitudeOther} + @{fortitudeTemp}" disabled="true"/>
+            </div>
+            <div class="equation">
+              <div class="mathOperator">=</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>2 x Body + Heart</label>
+                <div class="inner">
+                  <input type="number" name="attr_fortitudeCalc" value="@{bodyTotal}*2 + @{heartTotal}" disabled="true"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>Other</label>
+                <div class="inner">
+                  <input type="number" name="attr_fortitudeOther" value="0"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.6in;">
+                <label>Temporary</label>
+                <div class="inner">
+                  <input type="number" name="attr_fortitudeTemp" value="0"/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="secondaryAttribute">
+            <div class="total graphicalField"><img src="https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/willpower.png"/>
+              <input type="number" name="attr_willpower" style="left: 22px; top: 26px;" value="0"/>
+              <input type="number" name="attr_willpower_max" style="left: 54px; top: 26px;" value="@{willpowerCalc} + @{willpowerOther} + @{willpowerTemp}" disabled="true"/>
+            </div>
+            <div class="equation">
+              <div class="mathOperator">=</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>2 x Mind + Heart</label>
+                <div class="inner">
+                  <input type="number" name="attr_willpowerCalc" value="@{mindTotal}*2 + @{heartTotal}" disabled="true"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>Other</label>
+                <div class="inner">
+                  <input type="number" name="attr_willpowerOther" value="0"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.6in;">
+                <label>Temporary</label>
+                <div class="inner">
+                  <input type="number" name="attr_willpowerTemp" value="0"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="tab">
     <input type="radio" id="tab_2" name="mainTabs"/>
     <label for="tab_2">Skills</label>
     <div class="tabPanel">
-      <div>TEST skills</div>
+      <div class="skillsPanel">
+        <fieldset class="repeating_skills">
+          <div class="labelledUnderlined" style="width: 1.5in;">
+            <label>Name</label>
+            <div class="inner">
+              <input type="text" name="attr_name"/>
+            </div>
+          </div>
+          <div class="labelledUnderlined">
+            <label>Total</label>
+            <div class="inner">
+              <input type="number" name="attr_total" style="width: 0.5in;" value="0" disabled="true"/>
+            </div>
+          </div>
+          <div class="equation inlineBlock">
+            <div class="mathOperator">=</div>
+            <div class="labelledUnderlined">
+              <label>Attribute</label>
+              <div class="inner">
+                <select name="attr_attr">
+                  <option value="mind" selected="selected">Mind</option>
+                  <option value="body">Body</option>
+                  <option value="heart">Heart</option>
+                </select>
+              </div>
+            </div>
+            <div class="mathOperator">+</div>
+            <div class="checkbox">
+              <input type="checkbox" name="attr_trained"/><span>T</span>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" name="attr_improved"/><span>I</span>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" name="attr_greater"/><span>G</span>
+            </div>
+            <div class="mathOperator">+</div>
+            <div class="labelledUnderlined">
+              <label>Other</label>
+              <div class="inner">
+                <input type="number" name="attr_other" style="width: 0.5in;"/>
+              </div>
+            </div>
+            <div class="mathOperator">+</div>
+            <div class="labelledUnderlined">
+              <label>Temporary</label>
+              <div class="inner">
+                <input type="number" name="attr_temp" style="width: 0.6in;"/>
+              </div>
+            </div>
+          </div>
+          <div class="labelledUnderlined">
+            <label>Notes</label>
+            <div class="inner">
+              <input type="text" name="attr_notes"/>
+            </div>
+          </div>
+          <button type="roll" value="&amp;{template:mlprim5} {{charName=@{character_name}}} {{attr=@{name}}} {{result=[[@{equation}]]}} {{notes=@{notes}}}"></button>
+          <input type="hidden" name="attr_equation" value="2d6"/>
+        </fieldset>
+      </div>
     </div>
   </div>
   <div class="tab">
@@ -151,7 +398,7 @@ function parseAttrs(attrs, cb) {
 }
 
 </script>
-<rolltemplate class="sheet-rolltemplate-pf">
+<rolltemplate class="sheet-rolltemplate-mlprim5">
   <table>
     <thead>
       <tr>

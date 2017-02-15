@@ -31,6 +31,9 @@ module.exports = function(grunt) {
             {
               pattern: /\.((?!charsheet)[^ .\n]+)(?=.+\{)/g,
               replacement: function(match, p1) {
+                if(p1 === 'inlinerollresult')
+                  return '.inlinerollresult';
+                else;
                 return '.sheet-' + p1;
               }
             }

@@ -1,1 +1,87 @@
-div TEST core
+.corePanel
+  div(style='margin-left: 64px;')
+    +labelledUnderlined('Virtue')(style='width: 2in;'): +input('text', 'virtue')
+    +labelledUnderlined('Flaw')(style='width: 2in;'): +input('text', 'flaw')
+    +labelledUnderlined('Quirks')(style='width: 2in;'): +input('text', 'quirks')
+    +labelledUnderlined('Active Status Conditions')(style='width: 3in;'): +input('text', 'activeConditions')
+
+  .inlineBlock(style='width: 50%;')
+    .primaryAttribute
+      .total.graphicalField
+        img(src='https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/mind.png')
+        +input('number', 'mindTotal')(disabled='true', value='@{mindBase} + @{mindPerks} + @{mindOther} + @{mindTemp}')
+      .equation
+        .mathOperator =
+        +labelledUnderlined('Base')(style='width:0.5in;'): +input('number', 'mindBase')(value='1')
+        .mathOperator +
+        +labelledUnderlined('Perks')(style='width:0.5in;'): +input('number', 'mindPerks')(value='0')
+        .mathOperator +
+        +labelledUnderlined('Other')(style='width:0.5in;'): +input('number', 'mindOther')(value='0')
+        .mathOperator +
+        +labelledUnderlined('Temporary')(style='width:0.6in;'): +input('number', 'mindTemp')(value='0')
+
+    .primaryAttribute
+      .total.graphicalField
+        img(src='https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/body.png')
+        +input('number', 'bodyTotal')(disabled='true', value='@{bodyBase} + @{bodyPerks} + @{bodyOther} + @{bodyTemp}')
+      .equation
+        .mathOperator =
+        +labelledUnderlined('Base')(style='width:0.5in;'): +input('number', 'bodyBase')(value='1')
+        .mathOperator +
+        +labelledUnderlined('Perks')(style='width:0.5in;'): +input('number', 'bodyPerks')(value='0')
+        .mathOperator +
+        +labelledUnderlined('Other')(style='width:0.5in;'): +input('number', 'bodyOther')(value='0')
+        .mathOperator +
+        +labelledUnderlined('Temporary')(style='width:0.6in;'): +input('number', 'bodyTemp')(value='0')
+
+    .primaryAttribute
+      .total.graphicalField
+        img(src='https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/heart.png')
+        +input('number', 'heartTotal')(disabled='true', value='@{heartBase} + @{heartPerks} + @{heartOther} + @{heartTemp}')
+      .equation
+        .mathOperator =
+        +labelledUnderlined('Base')(style='width:0.5in;'): +input('number', 'heartBase')(value='1')
+        .mathOperator +
+        +labelledUnderlined('Perks')(style='width:0.5in;'): +input('number', 'heartPerks')(value='0')
+        .mathOperator +
+        +labelledUnderlined('Other')(style='width:0.5in;'): +input('number', 'heartOther')(value='0')
+        .mathOperator +
+        +labelledUnderlined('Temporary')(style='width:0.6in;'): +input('number', 'heartTemp')(value='0')
+
+  .inlineBlock(style='width: 48%;')
+    .secondaryAttribute(style='margin-bottom: 15px;')
+      .total.graphicalField
+        img(src='https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/armor.png')
+        +input('number', 'armor')(style='left: 22px; top: 28px;', value='0')
+        +input('number', 'armor_max')(disabled='true', value='@{armorGear} + @{armorOther} + @{armorTemp}', style='left: 54px; top: 28px;')
+      .equation
+        .mathOperator =
+        +labelledUnderlined('Gear')(style='width:0.5in;'): +input('number', 'armorGear')(value='0')
+        .mathOperator +
+        +labelledUnderlined('Other')(style='width:0.5in;'): +input('number', 'armorOther')(value='0')
+        .mathOperator +
+        +labelledUnderlined('Temporary')(style='width:0.6in;'): +input('number', 'armorTemp')(value='0')
+    .secondaryAttribute(style='margin-bottom: 16px;')
+      .total.graphicalField
+        img(src='https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/fortitude.png')
+        +input('number', 'fortitude')(style='left: 22px; top: 26px;', value='0')
+        +input('number', 'fortitude_max')(disabled='true', value='@{fortitudeCalc} + @{fortitudeOther} + @{fortitudeTemp}', style='left: 54px; top: 26px;')
+      .equation
+        .mathOperator =
+        +labelledUnderlined('2 x Body + Heart')(style='width:0.5in;'): +input('number', 'fortitudeCalc')(value='@{bodyTotal}*2 + @{heartTotal}', disabled='true')
+        .mathOperator +
+        +labelledUnderlined('Other')(style='width:0.5in;'): +input('number', 'fortitudeOther')(value='0')
+        .mathOperator +
+        +labelledUnderlined('Temporary')(style='width:0.6in;'): +input('number', 'fortitudeTemp')(value='0')
+    .secondaryAttribute
+      .total.graphicalField
+        img(src='https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/willpower.png')
+        +input('number', 'willpower')(style='left: 22px; top: 26px;', value='0')
+        +input('number', 'willpower_max')(disabled='true', value='@{willpowerCalc} + @{willpowerOther} + @{willpowerTemp}', style='left: 54px; top: 26px;')
+      .equation
+        .mathOperator =
+        +labelledUnderlined('2 x Mind + Heart')(style='width:0.5in;'): +input('number', 'willpowerCalc')(value='@{mindTotal}*2 + @{heartTotal}', disabled='true')
+        .mathOperator +
+        +labelledUnderlined('Other')(style='width:0.5in;'): +input('number', 'willpowerOther')(value='0')
+        .mathOperator +
+        +labelledUnderlined('Temporary')(style='width:0.6in;'): +input('number', 'willpowerTemp')(value='0')
