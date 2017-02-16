@@ -2,24 +2,35 @@ include ../fields.pug
 
 .skillsPanel
   +repeating('skills')
-    +labelledUnderlined('Name')(style='width: 1.5in;'): +input('text', 'name')
-    +labelledUnderlined('Total'): +input('number', 'total')(value='0', disabled='true', style='width: 0.5in;')
-    .equation.inlineBlock
-      .mathOperator =
-      +labelledUnderlined('Attribute'): +select('attr')
-        +option('Mind', 'mind', true)
-        +option('Body', 'body')
-        +option('Heart', 'heart')
-      .mathOperator +
-      +checkbox('trained', 'T', '1')
-      +checkbox('improved', 'I', '1')
-      +checkbox('greater', 'G', '1')
-      .mathOperator +
-      +labelledUnderlined('Other'): +input('number', 'other')(style='width: 0.5in;')
-      .mathOperator +
-      +labelledUnderlined('Temporary'): +input('number', 'temp')(style='width: 0.6in;')
+    div(style='margin-bottom: 1em;')
+      +labelledUnderlined('Name')(style='width: 1.25in;'): +input('text', 'name')
+      +labelledUnderlined('Total')(style='width: 0.4in;'): +readOnlyBox('total')(value='0')
+      .equation.inlineBlock
+        .mathOperator =
+        +labelledUnderlined('Attribute'): +select('attr')
+          +option('Pick One', 'derp', true)
+          +option('Mind', 'mind')
+          +option('Body', 'body')
+          +option('Heart', 'heart')
+        +input('hidden', 'attrValue')(value='1')
+        .mathOperator +
+        +checkbox('trained', 'T', 1, false)(title='Trained?: Roll 3d6 instead of 2d6')
+        +checkbox('improved', 'I', 1, false)(title='Improved?: +2 bonus')
+        +checkbox('greater', 'G', 1, false)(title='')
+        .mathOperator -
+        +labelledUnderlined('Armor Pen.?'): +select('hasArmorPenalty')
+          +option('No')
+          +option('Yes')
+        .mathOperator +
+        +labelledUnderlined('Other'): +input('number', 'other')(style='width: 0.4in;', value='0')
+        .mathOperator +
+        +labelledUnderlined('Temporary'): +input('number', 'temp')(style='width: 0.6in;', value='0')
 
+      +labelledUnderlined('Notes'): +input('text', 'notes')(style='font-size: 0.7em;')
+      +labelledUnderlined('Roll Type'): +select('rolltype')(style='font-size: 0.7em;')
+        +option('Normal', 'normal', true)
+        +option('Advantage', 'adv')
+        +option('Disadvantage', 'dis')
 
-    +labelledUnderlined('Notes'): +input('text', 'notes')
-    button(type='roll', value='&{template:mlprim5} {{charName=@{character_name}}} {{attr=@{name}}} {{result=[[@{equation}]]}} {{notes=@{notes}}}')
-    +input('hidden', 'equation')(value='2d6')
+      button(type='roll', value='&{template:mlprim5} {{charName=@{character_name}}} {{attr=@{name}}} {{result=[[@{equation}]]}} {{notes=@{notes}}}')
+      +input('hidden', 'equation')(value='2d6')

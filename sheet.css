@@ -45,11 +45,19 @@
 .charsheet .sheet-corePanel .sheet-primaryAttribute .sheet-total {
   display: inline-block;
 }
-.charsheet .sheet-corePanel .sheet-primaryAttribute .sheet-total input {
+.charsheet .sheet-corePanel .sheet-primaryAttribute .sheet-total button {
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.charsheet .sheet-corePanel .sheet-primaryAttribute .sheet-total .sheet-readOnlyBox {
   font-size: 2em;
   left: 37px;
   text-align: center;
-  top: 31px;
+  top: 37px;
   width: 32px;
 }
 .charsheet .sheet-corePanel .sheet-secondaryAttribute {
@@ -79,13 +87,33 @@
   -webkit-appearance: none;
   margin: 0;
 }
+.charsheet label.sheet-inlineLabel {
+  color: #0ff;
+  display: inline-block;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: normal;
+  margin-left: 1em;
+  margin-bottom: 0;
+  vertical-align: middle;
+  width: initial;
+}
+.charsheet label.sheet-inlineLabel + input {
+  background: rgba(0, 0, 0, 0.5);
+}
 .charsheet select {
+  background: rgba(0, 0, 0, 0.5);
+  border: solid 1px #0ff;
   box-shadow: none;
+  color: #0ff;
   height: auto;
   line-height: 18px;
   margin-bottom: 0;
   -moz-appearance: none;
   -webkit-appearance: none;
+}
+.charsheet select option {
+  background: rgba(0, 0, 0, 0.5);
 }
 .charsheet textarea {
   background: linear-gradient(to bottom, transparent, transparent 17px, rgba(0, 255, 255, 0.1));
@@ -93,11 +121,15 @@
   background-size: 1px 18px;
   border: none;
   box-shadow: none;
+  color: #0ff;
   padding: 0;
-  resize: none;
+  resize: vertical;
+}
+.charsheet textarea::-webkit-input-placeholder {
+  color: rgba(0, 255, 255, 0.5);
 }
 .charsheet .sheet-checkbox {
-  background: rgba(0, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.5);
   border: solid 1px #0ff;
   border-radius: 3px;
   display: inline-block;
@@ -131,7 +163,7 @@
 .charsheet .sheet-graphicalField {
   position: relative;
 }
-.charsheet .sheet-graphicalField input {
+.charsheet .sheet-graphicalField input, .charsheet .sheet-graphicalField .sheet-readOnlyBox {
   background: transparent;
   padding: 0;
   position: absolute;
@@ -178,10 +210,20 @@
   padding-right: 0.25em;
 }
 .charsheet .sheet-readOnlyBox {
-  background: rgba(0, 0, 255, 0.005);
+  cursor: not-allowed;
   display: inline-block;
-  padding: 4px;
-  width: 3.5em;
+}
+.charsheet .sheet-gearPanel .sheet-itemCard {
+  border: solid 1px #0ff;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  overflow-x: hidden;
+}
+.charsheet .sheet-gearPanel .sheet-itemCard .sheet-header {
+  background: rgba(0, 0, 0, 0.5);
+}
+.charsheet .sheet-powersPanel input:in-range + .sheet-powerPoints {
+  display: none;
 }
 .charsheet .sheet-tabsContainer {
   position: relative;
@@ -225,6 +267,19 @@
   position: absolute;
   top: 2em;
   width: 95%;
+}
+.charsheet button {
+  background: #0ff;
+  border: solid 2px rgba(0, 255, 255, 0.25);
+  color: #000;
+}
+.charsheet button:active {
+  background: rgba(0, 255, 255, 0.25);
+}
+.charsheet h2 {
+  color: #0ff;
+  font-style: italic;
+  text-decoration: underline;
 }
 .charsheet table thead th {
   line-height: 1em;

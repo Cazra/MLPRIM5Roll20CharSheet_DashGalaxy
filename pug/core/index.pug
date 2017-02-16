@@ -3,13 +3,15 @@
     +labelledUnderlined('Virtue')(style='width: 2in;'): +input('text', 'virtue')
     +labelledUnderlined('Flaw')(style='width: 2in;'): +input('text', 'flaw')
     +labelledUnderlined('Quirks')(style='width: 2in;'): +input('text', 'quirks')
+    +labelledUnderlined('Langaugaes')(style='width: 3in;'): +input('text', 'languages')
     +labelledUnderlined('Active Status Conditions')(style='width: 3in;'): +input('text', 'activeConditions')
 
   .inlineBlock(style='width: 50%;')
     .primaryAttribute
       .total.graphicalField
         img(src='https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/mind.png')
-        +input('number', 'mindTotal')(disabled='true', value='@{mindBase} + @{mindPerks} + @{mindOther} + @{mindTemp}')
+        +readOnlyBox('mindTotal')(value='1')
+        button(type='roll', value='&{template:mlprim5} {{charName=@{character_name}}} {{attr=Mind}} {{result=[[2d6 + @{mindTotal}]]}}')
       .equation
         .mathOperator =
         +labelledUnderlined('Base')(style='width:0.5in;'): +input('number', 'mindBase')(value='1')
@@ -23,7 +25,8 @@
     .primaryAttribute
       .total.graphicalField
         img(src='https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/body.png')
-        +input('number', 'bodyTotal')(disabled='true', value='@{bodyBase} + @{bodyPerks} + @{bodyOther} + @{bodyTemp}')
+        +readOnlyBox('bodyTotal')(value='1')
+        button(type='roll', value='&{template:mlprim5} {{charName=@{character_name}}} {{attr=Body}} {{result=[[2d6 + @{mindTotal}]]}}')
       .equation
         .mathOperator =
         +labelledUnderlined('Base')(style='width:0.5in;'): +input('number', 'bodyBase')(value='1')
@@ -37,7 +40,8 @@
     .primaryAttribute
       .total.graphicalField
         img(src='https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/heart.png')
-        +input('number', 'heartTotal')(disabled='true', value='@{heartBase} + @{heartPerks} + @{heartOther} + @{heartTemp}')
+        +readOnlyBox('heartTotal')(value='1')
+        button(type='roll', value='&{template:mlprim5} {{charName=@{character_name}}} {{attr=Heart}} {{result=[[2d6 + @{mindTotal}]]}}')
       .equation
         .mathOperator =
         +labelledUnderlined('Base')(style='width:0.5in;'): +input('number', 'heartBase')(value='1')

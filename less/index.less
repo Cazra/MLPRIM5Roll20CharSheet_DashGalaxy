@@ -9,11 +9,27 @@
 
   @import "coreTab.less";
   @import "fields.less";
-  //@import "gearTab.less";
+  @import "gearTab.less";
   //@import "magicTab.less";
   //@import "skillsTab.less";
-  //@import "specialFeatsTab";
+  @import "powersTab.less";
   @import "tabs.less";
+
+  button {
+    background: #0ff;
+    border: solid 2px fade(#0ff, 25%);
+    color: #000;
+
+    &:active {
+      background: fade(#0ff, 25%);
+    }
+  }
+
+  h2 {
+    color: #0ff;
+    font-style: italic;
+    text-decoration: underline;
+  }
 
   table {
     thead {

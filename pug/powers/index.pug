@@ -1,1 +1,17 @@
-div TEST powers
+include ../fields.pug
+
+.powersPanel
+  +repeating('powers')
+    +labelledUnderlined('Name'): +input('text', 'name')
+    +labelledUnderlined('Type'): +select('type')
+      +option('Normal', 'points')
+      +option('Limited', 'limited')
+      +option('Passive', 'passive')
+
+    +input('number', 'hidePowerPoints')(value='0', min='1', style='display: none;')
+    .powerPoints.inlineBlock
+      label.inlineLabel Power Points:
+      +labelledUnderlined('Current'): +input('number', 'powerpoints')(style='width: 0.6in;')
+      .mathOperator /
+      +labelledUnderlined('Max'): +input('number', 'powerpoints_max')(style='width: 0.6in;')
+    +textarea('desc')(placeholder='description/effects', style='height: 4em;')

@@ -9,13 +9,36 @@ input {
   }
 }
 
+label.inlineLabel {
+  color: #0ff;
+  display: inline-block;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: normal;
+  margin-left: 1em;
+  margin-bottom: 0;
+  vertical-align: middle;
+  width: initial;
+
+  & + input {
+    background: fade(#000, 50%);
+  }
+}
+
 select {
+  background: fade(#000, 50%);
+  border: solid 1px #0ff;
   box-shadow: none;
+  color: #0ff;
   height: auto;
   line-height: 18px;
   margin-bottom: 0;
   -moz-appearance: none;
   -webkit-appearance: none;
+
+  option {
+    background: fade(#000, 50%);
+  }
 }
 
 textarea {
@@ -24,12 +47,17 @@ textarea {
   background-size: 1px 18px;
   border: none;
   box-shadow: none;
+  color: #0ff;
   padding: 0;
-  resize: none;
+  resize: vertical;
+
+  &::-webkit-input-placeholder {
+    color: fade(#0ff, 50%);
+  }
 }
 
 .checkbox {
-  background: fade(#0ff, 10%);
+  background: fade(#000, 50%);
   border: solid 1px #0ff;
   border-radius: 3px;
   display: inline-block;
@@ -69,7 +97,7 @@ textarea {
 .graphicalField {
   position: relative;
 
-  input {
+  input, .readOnlyBox {
     background: transparent;
     padding: 0;
     position: absolute;
@@ -125,8 +153,6 @@ textarea {
 }
 
 .readOnlyBox {
-  background: fade(#00f, 0.5);
+  cursor: not-allowed;
   display: inline-block;
-  padding: 4px;
-  width: 3.5em;
 }

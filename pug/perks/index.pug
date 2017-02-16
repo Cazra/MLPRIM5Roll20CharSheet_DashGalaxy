@@ -1,1 +1,7 @@
-div TEST perks
+include ../fields.pug
+
+.perksPanel
+  +repeating('perks')
+    +checkbox('isBonusPerk', 'B')(title='Bonus Perk?: Check this if this is a bonus perk.')
+    +labelledUnderlined('Name')(style='width: 1.5in;'): +input('text', 'name')
+    +labelledUnderlined('Description'): +input('text', 'desc')(style='width: 6in;')

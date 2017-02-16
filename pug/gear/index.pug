@@ -1,1 +1,47 @@
-div TEST gear
+include ../fields.pug
+
+.gearPanel
+  .inlineBlock(style='width: 50%; vertical-align: top;')
+    h2 Special Equipment
+    +repeating('specialItems')
+      .itemCard
+        .header
+          +checkbox('equipped', 'E')(title='Equipped?: Check this if the item is currently equipped.')
+          +checkbox('isBig', 'BIG')(title='Big?: Check this if this is a Big item.', style='width: 32px;')
+          +input('text', 'name')(placeholder='Item name', style='width: 2in; background: transparent;')
+          +select('type')(style='width: 1.5in; background: transparent; border: none;')
+            +option('Pick One', 'default', true)
+            +option('Weapon - Melee')
+            +option('Weapon - Polearm')
+            +option('Weapon - Lash')
+            +option('Weapon - Throwing')
+            +option('Weapon - Ranged')
+            +option('Gadget')
+            +option('Armor')
+            +option('Clothes')
+            +option('Shield')
+            +option('Head')
+            +option('Neck')
+            +option('Back')
+            +option('Waist')
+            +option('Legs')
+            +option('Feet')
+            +option('Accessory')
+            +option('Cybernetic')
+            +option('Other')
+            +option('Consumable')
+        .body
+          +textarea('description')(style='height: 2em; width: 380px; padding: 10px; background-position: 0 10px;')
+
+  .inlineBlock(style='width: 45%; vertical-align: top; margin-left: 1em;')
+    h2 Mundane Gear
+    +textarea('gear')(placeholder='Gear and equipment')
+
+    label.inlineLabel Galactic Credits:
+    +input('number', 'money')(style='width: 1.5in;')
+
+    div(style='margin-bottom: 1em;')
+      +checkbox('encumbered', 'Encumbered')(title='Encumbered?: Check this if your character is carrying so much stuff that they\'re encumbered.', style='width: 1in;')
+
+      label.inlineLabel Armor Penalty:
+      +input('number', 'armorPenalty')
