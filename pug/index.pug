@@ -9,10 +9,11 @@ include tabs.pug
       .inlineBlock.graphicalField(style='position: relative;')
         img(src='https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/perkLevel.png')
         +input('number', 'perk_level')(style='left: 19px; top: 43px; font-size: 2em; font-family: sans-serif; width: 32px; text-align: center;')
-        +input('text', 'character_name')(style='left: 80px; top: 47px; font-size: 1.5em; font-family: sans-serif; width: 240px')
+        +input('text', 'character_name')(style='left: 80px; top: 47px; font-size: 1.5em; font-family: sans-serif; width: 360px')
       .inlineBlock(style='position: relative; vertical-align: top; width: 4in;')
-        +labelledUnderlined('Race')(style='width: 1.5in; position: absolute; top: 45px'): +input('text', 'race')
-        +labelledUnderlined('Job')(style='width: 2in; position: absolute; top: 45px; left: 1.6in;'): +input('text', 'classes')
+        +labelledUnderlined('Race')(style='width: 1in; position: absolute; top: 45px'): +input('text', 'race')
+        +labelledUnderlined('Gender')(style='width: 0.75in; position: absolute; top: 45px; left: 1.1in;'): +input('text', 'gender')
+        +labelledUnderlined('Job')(style='width: 1.5in; position: absolute; top: 45px; left: 1.95in;'): +input('text', 'classes')
 
 .tabsContainer
   +tab('Core', 'mainTabs', true)

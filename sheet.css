@@ -305,6 +305,9 @@
 .charsheet .sheet-inlineBlock {
   display: inline-block;
 }
+.charsheet ::-webkit-input-placeholder {
+  color: rgba(0, 255, 255, 0.25);
+}
 .charsheet ::-webkit-scrollbar {
   width: 10px;
 }
