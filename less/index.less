@@ -1,7 +1,8 @@
 @import "rolltemplate.less";
 
 .charsheet {
-  background: #000;
+  background: url("https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/background.png");
+  background-size: cover;
   color: #0ff;
   height: 100%;
   min-height: 9in;
@@ -62,5 +63,23 @@
 
   .inlineBlock {
     display: inline-block;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: fade(#000, 50%);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #0ff;
+    border-radius: 5px;
   }
 }

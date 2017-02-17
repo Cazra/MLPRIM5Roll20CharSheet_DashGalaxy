@@ -433,7 +433,7 @@
     <label for="tab_5">Gear/Equipment</label>
     <div class="tabPanel">
       <div class="gearPanel">
-        <div class="inlineBlock" style="width: 50%; vertical-align: top;">
+        <div class="inlineBlock" style="width: 50%; vertical-align: top; overflow-y: auto; max-height: 6in; padding-right: 1em;">
           <h2>Special Equipment</h2>
           <fieldset class="repeating_specialItems">
             <div class="itemCard">
@@ -474,11 +474,13 @@
             </div>
           </fieldset>
         </div>
-        <div class="inlineBlock" style="width: 45%; vertical-align: top; margin-left: 1em;">
+        <div class="inlineBlock" style="width: 44%; vertical-align: top; margin-left: 1em; max-height: 6in; padding-right: 1em; overflow-y: auto;">
           <h2>Mundane Gear</h2>
           <textarea name="attr_gear" placeholder="Gear and equipment"></textarea>
-          <label class="inlineLabel">Galactic Credits:</label>
-          <input type="number" name="attr_money" style="width: 1.5in;"/>
+          <div style="margin-bottom: 1em;">
+            <label class="inlineLabel">Galactic Credits:</label>
+            <input type="number" name="attr_money" style="width: 1.5in;"/>
+          </div>
           <div style="margin-bottom: 1em;">
             <div class="checkbox" style="width: 1in;">
               <input type="checkbox" name="attr_encumbered" title="Encumbered?: Check this if your character is carrying so much stuff that they're encumbered."/><span>Encumbered</span>

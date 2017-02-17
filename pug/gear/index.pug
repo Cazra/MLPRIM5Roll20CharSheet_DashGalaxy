@@ -1,7 +1,7 @@
 include ../fields.pug
 
 .gearPanel
-  .inlineBlock(style='width: 50%; vertical-align: top;')
+  .inlineBlock(style='width: 50%; vertical-align: top; overflow-y: auto; max-height: 6in; padding-right: 1em;')
     h2 Special Equipment
     +repeating('specialItems')
       .itemCard
@@ -33,12 +33,13 @@ include ../fields.pug
         .body
           +textarea('description')(style='height: 2em; width: 380px; padding: 10px; background-position: 0 10px;')
 
-  .inlineBlock(style='width: 45%; vertical-align: top; margin-left: 1em;')
+  .inlineBlock(style='width: 44%; vertical-align: top; margin-left: 1em; max-height: 6in; padding-right: 1em; overflow-y: auto;')
     h2 Mundane Gear
     +textarea('gear')(placeholder='Gear and equipment')
 
-    label.inlineLabel Galactic Credits:
-    +input('number', 'money')(style='width: 1.5in;')
+    div(style='margin-bottom: 1em;')
+      label.inlineLabel Galactic Credits:
+      +input('number', 'money')(style='width: 1.5in;')
 
     div(style='margin-bottom: 1em;')
       +checkbox('encumbered', 'Encumbered')(title='Encumbered?: Check this if your character is carrying so much stuff that they\'re encumbered.', style='width: 1in;')
