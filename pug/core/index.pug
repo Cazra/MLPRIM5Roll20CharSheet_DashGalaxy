@@ -3,10 +3,10 @@
     +labelledUnderlined('Virtue')(style='width: 2in;'): +input('text', 'virtue')
     +labelledUnderlined('Flaw')(style='width: 2in;'): +input('text', 'flaw')
     +labelledUnderlined('Quirks')(style='width: 2in;'): +input('text', 'quirks')
-    +labelledUnderlined('Langaugaes')(style='width: 3in;'): +input('text', 'languages')
+    +labelledUnderlined('Languages')(style='width: 3in;'): +input('text', 'languages')
     +labelledUnderlined('Active Status Conditions')(style='width: 3in;'): +input('text', 'activeConditions')
 
-  .inlineBlock(style='width: 50%;')
+  .inlineBlock(style='vertical-align: middle; width: 50%;')
     .primaryAttribute
       .total.graphicalField
         img(src='https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/mind.png')
@@ -52,7 +52,7 @@
         .mathOperator +
         +labelledUnderlined('Temporary')(style='width:0.6in;'): +input('number', 'heartTemp')(value='0')
 
-  .inlineBlock(style='width: 48%;')
+  .inlineBlock(style='vertical-align: middle; width: 48%;')
     .secondaryAttribute(style='margin-bottom: 15px;')
       .total.graphicalField
         img(src='https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/armor.png')
@@ -89,5 +89,17 @@
         +labelledUnderlined('Other')(style='width:0.5in;'): +input('number', 'willpowerOther')(value='0')
         .mathOperator +
         +labelledUnderlined('Temporary')(style='width:0.6in;'): +input('number', 'willpowerTemp')(value='0')
+    .secondaryAttribute
+      .total.graphicalField
+        img(src='https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/valor.png')
+        +input('number', 'valor')(style='left: 22px; top: 26px;', value='0')
+        +input('number', 'valor_max')(disabled='true', value='@{valorCalc} + @{valorOther} + @{valorTemp}', style='left: 54px; top: 26px;')
+      .equation
+        .mathOperator =
+        +labelledUnderlined('Heart')(style='width:0.5in;'): +input('number', 'valorCalc')(value='@{heartTotal}', disabled='true')
+        .mathOperator +
+        +labelledUnderlined('Other')(style='width:0.5in;'): +input('number', 'valorOther')(value='0')
+        .mathOperator +
+        +labelledUnderlined('Temporary')(style='width:0.6in;'): +input('number', 'valorTemp')(value='0')
 
   +textarea('descriptionAndAppearance')(placeholder='Description/Appearance')

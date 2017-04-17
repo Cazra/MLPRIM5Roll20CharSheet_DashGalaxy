@@ -56,7 +56,7 @@
             </div>
           </div>
           <div class="labelledUnderlined" style="width: 3in;">
-            <label>Langaugaes</label>
+            <label>Languages</label>
             <div class="inner">
               <input type="text" name="attr_languages"/>
             </div>
@@ -68,7 +68,7 @@
             </div>
           </div>
         </div>
-        <div class="inlineBlock" style="width: 50%;">
+        <div class="inlineBlock" style="vertical-align: middle; width: 50%;">
           <div class="primaryAttribute">
             <div class="total graphicalField"><img src="https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/mind.png"/>
               <div class="readOnlyBox"><span name="attr_mindTotal"></span></div>
@@ -181,7 +181,7 @@
             </div>
           </div>
         </div>
-        <div class="inlineBlock" style="width: 48%;">
+        <div class="inlineBlock" style="vertical-align: middle; width: 48%;">
           <div class="secondaryAttribute" style="margin-bottom: 15px;">
             <div class="total graphicalField"><img src="https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/armor.png"/>
               <input type="number" name="attr_armor" style="left: 22px; top: 28px;" value="0"/>
@@ -265,6 +265,35 @@
                 <label>Temporary</label>
                 <div class="inner">
                   <input type="number" name="attr_willpowerTemp" value="0"/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="secondaryAttribute">
+            <div class="total graphicalField"><img src="https://raw.githubusercontent.com/Cazra/MLPRIM5Roll20CharSheet_DashGalaxy/master/img/valor.png"/>
+              <input type="number" name="attr_valor" style="left: 22px; top: 26px;" value="0"/>
+              <input type="number" name="attr_valor_max" style="left: 54px; top: 26px;" value="@{valorCalc} + @{valorOther} + @{valorTemp}" disabled="true"/>
+            </div>
+            <div class="equation">
+              <div class="mathOperator">=</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>Heart</label>
+                <div class="inner">
+                  <input type="number" name="attr_valorCalc" value="@{heartTotal}" disabled="true"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.5in;">
+                <label>Other</label>
+                <div class="inner">
+                  <input type="number" name="attr_valorOther" value="0"/>
+                </div>
+              </div>
+              <div class="mathOperator">+</div>
+              <div class="labelledUnderlined" style="width:0.6in;">
+                <label>Temporary</label>
+                <div class="inner">
+                  <input type="number" name="attr_valorTemp" value="0"/>
                 </div>
               </div>
             </div>
